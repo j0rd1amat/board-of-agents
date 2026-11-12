@@ -44,7 +44,8 @@
   .card h2 { font-size: 21px; margin: 0 0 6px; letter-spacing: -0.01em; }
   .card p { margin: 0 0 18px; color: #5d5873; font-size: 16px; }
   .card .fine { color: #5d5873; }
-  .embed { margin-bottom: 14px; min-height: 106px; }
+  .embed { margin-bottom: 14px; min-height: 106px; overflow: hidden; min-width: 0; max-width: 100%; }
+  .card { min-width: 0; }
   /* beehiiv's form has a fixed 344px width; the script below zooms the frame so it always fills the card. */
   .embed iframe { width: 350px !important; max-width: none !important; border: 0; display: block; }
   .embed.empty { min-height: 0; margin: 0; }
