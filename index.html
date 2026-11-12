@@ -46,6 +46,9 @@
   .card .fine { color: #5d5873; }
   .embed { margin-bottom: 14px; min-height: 106px; }
   .embed iframe { width: 100% !important; border: 0; display: block; }
+  .embed.empty { min-height: 0; margin: 0; }
+  .card p.already { background: #f4f0ff; color: #17122b; border-radius: 10px; padding: 14px 16px; font-size: 15px; margin: 0 0 14px; }
+  .already a { color: #6a3fe0; font-weight: 600; }
   label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
   input[type=email] {
     width: 100%; padding: 13px 14px; font: inherit; color: var(--ink);
@@ -113,6 +116,18 @@
         <div class="embed">
           <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d9bd236e-8053-4f88-b18d-2edf2744a57a"></script>
         </div>
+        <p class="already" id="already" hidden>You are already on the list from this browser. <a href="starter-kit.zip">Download the kit again</a>.</p>
+        <script>
+          // beehiiv hides its form for visitors who already subscribed; say so instead of leaving a gap.
+          (function () {
+            function show() {
+              if (document.querySelector('.embed iframe')) return;
+              document.querySelector('.embed').classList.add('empty');
+              document.getElementById('already').hidden = false;
+            }
+            if (/(^|;\s*)bhv_[^=]*_subscribed=/.test(document.cookie)) show();
+          })();
+        </script>
         <p class="fine">You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
       </div>
     </div>
