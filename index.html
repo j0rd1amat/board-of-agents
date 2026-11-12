@@ -45,7 +45,8 @@
   .card p { margin: 0 0 18px; color: #5d5873; font-size: 16px; }
   .card .fine { color: #5d5873; }
   .embed { margin-bottom: 14px; min-height: 106px; }
-  .embed iframe { width: 100% !important; border: 0; display: block; }
+  /* beehiiv's form has a fixed 344px width; the script below zooms the frame so it always fills the card. */
+  .embed iframe { width: 350px !important; max-width: none !important; border: 0; display: block; }
   .embed.empty { min-height: 0; margin: 0; }
   .card p.already { background: #f4f0ff; color: #17122b; border-radius: 10px; padding: 14px 16px; font-size: 15px; margin: 0 0 14px; }
   .already a { color: #6a3fe0; font-weight: 600; }
@@ -126,6 +127,14 @@
               document.getElementById('already').hidden = false;
             }
             if (/(^|;\s*)bhv_[^=]*_subscribed=/.test(document.cookie)) show();
+            var box = document.querySelector('.embed');
+            function fit() {
+              var f = box.querySelector('iframe');
+              if (f && box.clientWidth) f.style.zoom = Math.min(1.3, box.clientWidth / 350);
+            }
+            new MutationObserver(fit).observe(box, { childList: true, subtree: true });
+            if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
+            window.addEventListener('resize', fit);
           })();
         </script>
         <p class="fine">You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
