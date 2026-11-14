@@ -81,6 +81,23 @@
   .file h3 { font-size: 18px; margin: 8px 0 6px; }
   .file p { margin: 0; color: var(--muted); font-size: 16px; }
 
+  .paper { display: grid; grid-template-columns: 1fr 0.8fr; gap: 48px; align-items: center; }
+  .paper .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  .paper h2 { margin: 0 0 16px; text-wrap: balance; }
+  .paper p { color: var(--muted); margin: 0 0 16px; }
+  .paper ul { margin: 0 0 22px; padding: 0; list-style: none; }
+  .paper li { padding: 12px 0; border-top: 1px solid var(--line); }
+  .paper li:last-child { border-bottom: 1px solid var(--line); }
+  .paper li b { display: block; }
+  .paper li span { color: var(--muted); font-size: 16px; }
+  .paper .links { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 0; }
+  .btn { display: inline-block; padding: 13px 22px; border-radius: 11px; background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none; }
+  .btn:hover { filter: brightness(1.08); }
+  .paper .links a:not(.btn) { color: var(--accent); font-weight: 600; }
+  .paper figure { margin: 0; }
+  .paper figure img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); box-shadow: 0 2px 4px rgba(11,31,58,.06), 0 24px 56px rgba(11,31,58,.16); transform: rotate(1.2deg); }
+  .paper figcaption { font-size: 13.5px; color: var(--muted); margin-top: 16px; text-align: center; }
+
   .rule { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
   .rule p { color: var(--muted); margin: 0 0 14px; }
   pre {
@@ -94,7 +111,8 @@
   footer a { color: inherit; }
 
   @media (max-width: 820px) {
-    .hero, .rule { grid-template-columns: 1fr; gap: 28px; }
+    .hero, .rule, .paper { grid-template-columns: 1fr; gap: 28px; }
+    .paper figure img { transform: none; }
     .hero { padding: 16px 0 40px; }
     .files { grid-template-columns: 1fr; }
     .wrap { padding: 0 16px; }
@@ -117,9 +135,9 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" id="kit">
         <h2>Get the starter kit</h2>
-        <p>A short guide, a setup prompt for Claude Code and four template files. Free, by email.</p>
+        <p>A short guide, a setup prompt for Claude Code, four template files and the Sunday newspaper example. Free, by email.</p>
         <!-- beehiiv subscribe form "New subscribe form". Edit its look in beehiiv → Subscribers → Subscribe forms. -->
         <div class="embed">
           <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d9bd236e-8053-4f88-b18d-2edf2744a57a"></script>
@@ -147,6 +165,27 @@
         <p class="fine">You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
       </div>
     </div>
+
+    <section id="newspaper">
+      <div class="paper">
+        <div>
+          <p class="eyebrow">Also in the kit</p>
+          <h2>A Sunday newspaper about my friends, written by agents</h2>
+          <p>During the week, agents read my WhatsApp, LinkedIn, Instagram and Gmail so I don't have to scroll. Every Sunday at 9:00 another agent turns what they found into three pages: who is moving, who is hiring, who has news, and who I should call this week.</p>
+          <ul>
+            <li><b>Read-only.</b><span>The agents never post, like or reply.</span></li>
+            <li><b>No quote, no fact.</b><span>Every line traces back to the exact words someone wrote.</span></li>
+            <li><b>It stays on my laptop.</b><span>Health, politics and money are left out.</span></li>
+          </ul>
+          <p>The kit has the prompt, the rules and the script that prints the paper, plus a setup prompt that builds your own with you.</p>
+          <p class="links"><a class="btn" href="#kit">Get it with the kit</a> <a href="sunday-newspaper-sample.pdf">Read the sample edition (PDF)</a></p>
+        </div>
+        <figure>
+          <img src="newspaper-sample.jpg" width="1000" height="1414" loading="lazy" alt="Front page of a sample edition of the newspaper, headlined: Marta trades Barcelona for Lisbon">
+          <figcaption>A sample edition. The people and messages in it are invented.</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section>
       <h2>What is in the kit</h2>
