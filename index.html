@@ -80,6 +80,9 @@
   .file code { font: 600 14px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); }
   .file h3 { font-size: 18px; margin: 8px 0 6px; }
   .file p { margin: 0; color: var(--muted); font-size: 16px; }
+  a.file { display: block; text-decoration: none; color: inherit; }
+  a.file:hover { border-color: var(--accent); }
+  a.file .more { display: inline-block; margin-top: 10px; color: var(--accent); font-weight: 600; font-size: 15px; }
 
   .paper { display: grid; grid-template-columns: 1fr 0.8fr; gap: 48px; align-items: center; }
   .paper .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
@@ -121,7 +124,7 @@
 </head>
 <body>
 <div class="wrap">
-  <header>Jordi Amat <span>· I lead a product and tech team of 100. On the side, agents run my company.</span></header>
+  <header>Jordi Amat <span>· I lead a product and tech team of 100. On the side, agents run my other companies.</span></header>
 
   <main>
     <div class="hero">
@@ -135,6 +138,7 @@
         </ul>
       </div>
 
+      <!-- card:start -->
       <div class="card" id="kit">
         <h2>Get the starter kit</h2>
         <p>A short guide, a setup prompt for Claude Code, four template files and the Sunday newspaper example. Free, by email.</p>
@@ -164,6 +168,7 @@
         </script>
         <p class="fine">You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
       </div>
+      <!-- card:end -->
     </div>
 
     <section id="newspaper">
@@ -186,6 +191,9 @@
         </figure>
       </div>
     </section>
+
+    <!-- use-cases:start -->
+    <!-- use-cases:end -->
 
     <section>
       <h2>What is in the kit</h2>
