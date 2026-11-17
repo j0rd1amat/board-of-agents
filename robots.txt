@@ -1,0 +1,4 @@
+# The kit files are for subscribers: keep them out of search results. Everything else is open.
+User-agent: *
+Disallow: /kit/
+Disallow: /starter-kit.zip

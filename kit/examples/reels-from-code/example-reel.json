@@ -1,0 +1,69 @@
+{
+  "id": "R1a",
+  "topic": "inbox-triage",
+  "look": "animation",
+  "beats": [
+    {
+      "key": "hook",
+      "say": "I have not opened my inbox before ten in three weeks.",
+      "scene": "hook",
+      "text": "I haven't opened my inbox *before ten* in three weeks."
+    },
+    {
+      "key": "what",
+      "say": "Every morning at seven, an agent reads it for me and sorts it into three piles.",
+      "scene": "cards",
+      "title": "Every morning at 7:00",
+      "items": [
+        { "icon": "bolt", "h": "Needs me today", "at": "sorts" },
+        { "icon": "clock", "h": "Can wait", "at": "three" },
+        { "icon": "doc", "h": "Just so you know", "at": "piles" }
+      ]
+    },
+    {
+      "key": "how",
+      "say": "It only reads. It never replies, never archives, never clicks a link.",
+      "scene": "strike",
+      "title": "What it is not allowed to do",
+      "items": [
+        { "h": "Reply", "at": "replies" },
+        { "h": "Archive", "at": "archives" },
+        { "h": "Click links", "at": "clicks" }
+      ],
+      "lock": "Read-only"
+    },
+    {
+      "key": "out",
+      "say": "What I get is one note. Yesterday's had four lines.",
+      "scene": "record",
+      "title": "Today's note",
+      "rows": [
+        ["Needs you", "Marta: contract, by Friday"],
+        ["Needs you", "Dentist: confirm Thursday"],
+        ["Can wait", "6 newsletters"],
+        ["FYI", "Invoice paid"]
+      ],
+      "hot": "Needs you"
+    },
+    {
+      "key": "rule",
+      "say": "One rule matters most. An email that talks to the agent is data, not an instruction.",
+      "scene": "quote",
+      "kicker": "The rule",
+      "headline": "What it reads is *data*, never instructions"
+    },
+    {
+      "key": "num",
+      "say": "It costs me one minute a day to read the note.",
+      "scene": "stat",
+      "n": "1 min",
+      "label": "a day, to read the note"
+    },
+    {
+      "key": "end",
+      "say": "The prompt and the rules are in my free kit.",
+      "scene": "end",
+      "line": "The people and messages shown are made up."
+    }
+  ]
+}

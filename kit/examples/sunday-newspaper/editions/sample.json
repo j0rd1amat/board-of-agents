@@ -1,0 +1,181 @@
+{
+  "title": "The Constellation",
+  "date": "Sunday, 15 November 2026",
+  "date_slug": "sample",
+  "issue": "Sample edition · invented people",
+  "top_stories": [
+    {
+      "kicker": "Moves",
+      "headline": "Marta trades Barcelona for Lisbon",
+      "deck": "After six years at the studio she starts a new role in January, and is already hunting for a flat near Príncipe Real.",
+      "body": [
+        "Marta broke the news in the Sunday Riders group on Tuesday: \"Signed today. Lisbon from January, send me your flat tips.\" She has been at the design studio since 2020 and led its move into product work.",
+        "She says the plan is to keep riding on weekends and to come back to Barcelona once a month. Two people in the group have already offered to visit in February.",
+        "You last spoke one to one in September, about the Girona ride."
+      ],
+      "photo": "img/city.jpg",
+      "caption": "Lisbon, where Marta lands in January.",
+      "credit": "Stock photo"
+    },
+    {
+      "kicker": "Network",
+      "headline": "Pau's startup closes its seed round",
+      "deck": "Eighteen months after leaving his corporate job, the round is done and he is hiring.",
+      "body": [
+        "Pau posted on LinkedIn on Wednesday that the round is closed and that he is looking for a first product designer.",
+        "He thanked \"everyone who took a call when this was a slide deck\". You were one of those calls, in March 2025."
+      ]
+    },
+    {
+      "kicker": "Family",
+      "headline": "Laia and Tom are expecting in the spring",
+      "deck": "The couple shared the news themselves, with a photo of tiny trainers.",
+      "body": [
+        "Laia posted it on Instagram on Friday: \"Team of three from April.\"",
+        "Your sister already replied in the family group with six exclamation marks."
+      ]
+    }
+  ],
+  "editorial": [
+    "A week of departures and arrivals. One friend is leaving the city, one is starting a company in earnest, and one family is about to get bigger.",
+    "It was also a quiet week in your own chats: you replied to most threads within a day, and the two loops still open are both on page 3."
+  ],
+  "sections": [
+    {
+      "name": "Family",
+      "items": [
+        {
+          "tag": "Milestone",
+          "headline": "Núria graduates in June",
+          "body": "Your cousin confirmed the date in the family group: 26 June, in Valencia. Your mother has asked who is driving."
+        },
+        {
+          "tag": "Plans",
+          "headline": "Christmas lunch moves to the 26th",
+          "body": "Agreed in the family group on Thursday, after three days and forty messages."
+        }
+      ]
+    },
+    {
+      "name": "Friends",
+      "items": [
+        {
+          "tag": "Sport",
+          "headline": "Oriol finishes his first marathon",
+          "body": "3 hours 58 minutes in Valencia, posted with the caption \"never again (until next year)\".",
+          "photo": "img/bike.jpg",
+          "credit": "Stock photo"
+        },
+        {
+          "tag": "Plans",
+          "headline": "Sunday Riders plan a December ride to Sitges",
+          "body": "Sara proposed the 13th. Four people have said yes so far; you haven't answered."
+        }
+      ]
+    },
+    {
+      "name": "Network moves",
+      "items": [
+        {
+          "tag": "New job",
+          "headline": "Inés joins a fintech as Head of Product",
+          "body": "Announced on LinkedIn on Monday. She starts in December."
+        },
+        {
+          "tag": "Launch",
+          "headline": "Sam launches a podcast on remote teams",
+          "body": "Episode one is out. He asked his network for guest ideas."
+        }
+      ]
+    },
+    {
+      "name": "Ideas in your feed",
+      "items": [
+        {
+          "headline": "Three posts this week on AI agents for small teams",
+          "body": "Two from people you know, one from a founder you follow. All three mention scheduling as the hard part."
+        }
+      ]
+    },
+    {
+      "name": "Catch up this week",
+      "items": [
+        {
+          "headline": "Álex · 7 months",
+          "body": "No one-to-one chat since April, though you both chat in Sunday Riders. He shared photos from Japan on Monday: ask how it went."
+        },
+        {
+          "headline": "Clara · no record of your last chat",
+          "body": "No recent hook. A plain check-in."
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "person": "Marta",
+      "action": "Congratulate, offer a Lisbon contact",
+      "why": "Moving in January, asked for flat tips",
+      "likelihood": 92,
+      "status": "Suggested"
+    },
+    {
+      "person": "Pau",
+      "action": "Congratulate, share designer names",
+      "why": "Closed his seed round, hiring a designer",
+      "likelihood": 88,
+      "status": "Suggested"
+    },
+    {
+      "person": "Sara",
+      "action": "Answer about the Sitges ride",
+      "why": "She asked the group, you haven't replied",
+      "likelihood": 85,
+      "status": "Open loop"
+    },
+    {
+      "person": "Álex",
+      "action": "Catch up",
+      "why": "7 months; just back from Japan",
+      "likelihood": 74,
+      "status": "Suggested"
+    },
+    {
+      "person": "Laia & Tom",
+      "action": "Send congratulations",
+      "why": "Expecting in April",
+      "likelihood": 70,
+      "status": "Suggested"
+    },
+    {
+      "person": "Clara",
+      "action": "Catch up",
+      "why": "No record of your last chat",
+      "likelihood": 41,
+      "status": "Suggested"
+    }
+  ],
+  "coming": [
+    {
+      "when": "Tue 17",
+      "what": "Founders breakfast, Poblenou"
+    },
+    {
+      "when": "Thu 19",
+      "what": "AI meetup at the tech hub"
+    },
+    {
+      "when": "Sun 13 Dec",
+      "what": "Sunday Riders to Sitges"
+    }
+  ],
+  "stats": {
+    "people": 310,
+    "new facts": 142,
+    "groups": 12,
+    "events ahead": 11,
+    "corrections": 3,
+    "incidents": 1
+  },
+  "security": "One message in a group chat addressed \"any AI reading this\" and asked for contact lists. It was ignored and logged."
+}

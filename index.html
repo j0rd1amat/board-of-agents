@@ -202,7 +202,38 @@
     .stick div b { display: block; color: var(--ink); font-size: 15px; }
     .stick .btn { padding: 12px 18px; }
   }
+  /* subscribers and visitors see different things; the script below decides which, before the page paints */
+  html:not(.member) .for-member, html.member .for-guest { display: none !important; }
+  html.member .embed, html.member .card .fine, html.member .signup .fine, html.member header .pill, html.member .last, html.member .stick { display: none !important; }
+  .in { background: #eef3fe; color: #0b1f3a; border-radius: 12px; padding: 16px 18px; font-size: 15.5px; line-height: 1.5; margin: 0 0 14px; }
+  .in b { display: block; font-size: 16.5px; margin-bottom: 2px; }
+  .in a { color: #1d4ed8; font-weight: 600; }
 </style>
+<!-- member:start -->
+<script>
+  // A subscriber's browser is recognised in two ways: it opened a link with ?k=<key> (the welcome email and every newsletter
+  // carry one), or it used the sign-up form. Either way the files unlock on every page, in this browser, from then on.
+  // This is a convenience, not security: the files are free. To change the key, change it here and in the emails, then
+  // run "node scripts/site.mjs rebuild" in the pipeline folder.
+  (function () {
+    var KEY = 'boa-4cu95w', d = document.documentElement, ok = false;
+    var signed = function () { return /(^|;\s*)bhv_[^=]*_subscribed=/.test(document.cookie); };
+    try {
+      var u = new URL(location.href);
+      if (u.searchParams.get('k') === KEY) localStorage.setItem('boa_member', '1');
+      if (u.searchParams.has('k')) { u.searchParams.delete('k'); history.replaceState(null, '', u.pathname + u.search + u.hash); }
+      ok = localStorage.getItem('boa_member') === '1';
+    } catch (e) {}
+    if (ok || signed()) { d.classList.add('member'); return; }
+    // the form sets its cookie when someone subscribes: unlock without a reload
+    var t = setInterval(function () {
+      if (!signed()) return;
+      clearInterval(t); d.classList.add('member');
+      try { localStorage.setItem('boa_member', '1'); } catch (e) {}
+    }, 1500);
+  })();
+</script>
+<!-- member:end -->
 <!-- Google Analytics (property "Board of Agents (jordi.orgbnb.com)", added 16 Nov 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-30DWCMLGJ3"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-30DWCMLGJ3');</script>
@@ -223,16 +254,12 @@
       <div class="embed">
         <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="d9bd236e-8053-4f88-b18d-2edf2744a57a"></script>
       </div>
-      <p class="already" id="already" hidden>You are already on the list from this browser. <a href="starter-kit.zip">Download the kit again</a>.</p>
+      <div class="in for-member">
+        <b>The files are unlocked in this browser.</b>
+        Every use case in the library shows its files, ready to download. <a href="library/">Open the library</a> or <a href="starter-kit.zip" data-ev="download_zip">get everything as one zip</a>.
+      </div>
       <script>
-        // beehiiv hides its form for visitors who already subscribed; say so instead of leaving a gap.
         (function () {
-          function show() {
-            if (document.querySelector('.embed iframe')) return;
-            document.querySelector('.embed').classList.add('empty');
-            document.getElementById('already').hidden = false;
-          }
-          if (/(^|;\s*)bhv_[^=]*_subscribed=/.test(document.cookie)) show();
           var box = document.querySelector('.embed');
           function fit() {
             var f = box.querySelector('iframe');
@@ -243,7 +270,7 @@
           window.addEventListener('resize', fit);
         })();
       </script>
-      <p class="fine">Free, by email. You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
+      <p class="fine">Free. The link that unlocks the files comes by email. You also get my newsletter on running operations with agents. Unsubscribe in one click. <a href="privacy.html">Privacy</a>.</p>
         <!-- card:end -->
         </div>
         <p class="by"><img src="email/jordi.jpg" width="44" height="44" alt=""><span><b>Jordi Amat.</b> I lead a product and tech team of 100. On the side, agents run my other companies.</span></p>
@@ -389,7 +416,7 @@
     // the bar shows only while the form is out of sight, and never to someone already on the list
     var bar = document.getElementById('stick'), kit = document.getElementById('kit');
     if (!bar || !kit || !window.IntersectionObserver) return;
-    if (/(^|;\s*)bhv_[^=]*_subscribed=/.test(document.cookie)) return;
+    if (document.documentElement.classList.contains('member')) return;
     new IntersectionObserver(function (e) { bar.classList.toggle('on', !e[0].isIntersecting); }).observe(kit);
   })();
 </script>
