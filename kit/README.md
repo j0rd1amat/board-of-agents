@@ -20,6 +20,7 @@ The smallest version of a company run by scheduled agents: one worker agent, one
 | `examples/reels-from-code/` | Short videos made from a text file: the format, an example reel and the maker's rules |
 | `examples/cheap-subagents/` | Cheaper sub-agents do the reading, the main agent only judges what is worth a notification |
 | `examples/stats-decide-next/` | An analyst agent that reads the numbers and decides what gets made next |
+| `examples/linkedin-warm-intros/` | A script that finds who you already know at the companies you want to reach, and the outreach rules that go with it |
 
 Every example folder has its own README and its own setup prompt. Start with the kit itself, then pick one example.
 
